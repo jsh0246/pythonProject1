@@ -52,8 +52,8 @@ class Server:
                 if rows is None:
                     return []
 
-                print("MMM")
-                print(rows)
+                # print("MMM")
+                # print(rows)
                 return [{"actor_id": row[0], "first_name": row[1], "last_name": row[2]} for row in rows]
             except Exception as e:
                 print(f"Server error: {e}")
