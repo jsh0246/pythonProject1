@@ -2,6 +2,7 @@ from fastapi import FastAPI, HTTPException, Query
 from pydantic import BaseModel
 from typing import List, Dict, Union
 from fastapi import HTTPException
+import uvicorn
 
 from db_service import DBService
 
@@ -67,3 +68,6 @@ class Server:
 # EchoServer 인스턴스 생성 및 FastAPI 애플리케이션 반환
 echo_server = Server()
 app = echo_server.get_app()
+
+if __name__ == "__main__":
+    uvicorn.run("server:app", host="127.0.0.1", port=8000, reload=True)
